@@ -1,0 +1,51 @@
+product_id,product_name,category,standard_price
+1,Product 1,Hardware,1191.25
+2,Product 2,SaaS Subscription,1361.41
+3,Product 3,SaaS Subscription,1580.45
+4,Product 4,SaaS Subscription,1001.9
+5,Product 5,SaaS Subscription,182.97
+6,Product 6,SaaS Subscription,1078.84
+7,Product 7,SaaS Subscription,1177.81
+8,Product 8,SaaS Subscription,1493.42
+9,Product 9,SaaS Subscription,869.0
+10,Product 10,SaaS Subscription,263.88
+11,Product 11,SaaS Subscription,574.71
+12,Product 12,SaaS Subscription,732.53
+13,Product 13,Hardware,1295.38
+14,Product 14,Hardware,1145.85
+15,Product 15,SaaS Subscription,718.63
+16,Product 16,Add‑On,1973.17
+17,Product 17,Hardware,1215.49
+18,Product 18,SaaS Subscription,482.08
+19,Product 19,Add‑On,212.55
+20,Product 20,Service,314.19
+21,Product 21,SaaS Subscription,499.46
+22,Product 22,SaaS Subscription,329.76
+23,Product 23,Add‑On,381.27
+24,Product 24,Add‑On,577.34
+25,Product 25,SaaS Subscription,355.01
+26,Product 26,SaaS Subscription,1794.56
+27,Product 27,SaaS Subscription,169.67
+28,Product 28,SaaS Subscription,1053.78
+29,Product 29,Hardware,826.69
+30,Product 30,SaaS Subscription,1964.93
+31,Product 31,SaaS Subscription,232.96
+32,Product 32,Add‑On,801.73
+33,Product 33,SaaS Subscription,1939.25
+34,Product 34,SaaS Subscription,1732.36
+35,Product 35,Add‑On,1635.97
+36,Product 36,Add‑On,523.23
+37,Product 37,Hardware,15000.0
+38,Product 38,Hardware,9999.0
+39,Product 39,SaaS Subscription,1859.46
+40,Product 40,SaaS Subscription,1117.96
+41,Product 41,Hardware,1147.51
+42,Product 42,SaaS Subscription,567.16
+43,Product 43,SaaS Subscription,1541.29
+44,Product 44,SaaS Subscription,382.22
+45,Product 45,SaaS Subscription,654.12
+46,Product 46,SaaS Subscription,856.62
+47,Product 47,SaaS Subscription,1020.14
+48,Product 48,SaaS Subscription,492.4
+49,Product 49,SaaS Subscription,238.53
+50,Product 50,Add‑On,1225.13
