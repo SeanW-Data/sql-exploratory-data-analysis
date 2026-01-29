@@ -2,7 +2,7 @@
 
 <h3>PostgreSQL | Data Analytics Portfolio Project</h3>
 
-<img src="diagrams/vertical_architecture_diagram.png" width="800">
+<img src="diagrams/vertical_architecture_diagram.png" width="150">
 
 <h3>📌 Project Overview</h3>
 
