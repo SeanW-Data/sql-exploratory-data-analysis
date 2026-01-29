@@ -2,7 +2,7 @@
 
 <h3>PostgreSQL | Data Analytics Portfolio Project</h3>
 
-<img src="sql_eda_project_architecture.png" width="800">
+<img src="diagrams/vertical_architecture_diagram.png" width="800">
 
 <h3>📌 Project Overview</h3>
 
@@ -32,13 +32,13 @@ The analysis focuses on revenue performance, customer behaviour, seasonality, ch
   <li>Do certain customer segments buy certain product types?</li>
   <li>Which periods spike in sales?</li>
   <li>Are some products more seasonal?</li>
-  <li>Do customers churn or re-appear based on time?</li>
+  <li>Do customers churn or reappear based on time?</li>
   <li>Do outliers represent bulk deals, pricing errors, or special contracts? Is missing data affecting visibility?</li>
 </ul>
 
 <h3>🗂️ Data Model (Star Schema)</h3>
 
-<img src="star_schema_erd_styled.png" width="450">
+<img src="diagrams/sales_data_erd.png" width="450">
 
 <p>
 The dataset follows a <strong>star schema</strong> design with one central fact table (<code>fact_sales</code>) and supporting dimensions (<code>dim_customer</code>, <code>dim_product</code>, <code>dim_date</code>). This structure enables efficient aggregation, segmentation, and time-series analysis.
