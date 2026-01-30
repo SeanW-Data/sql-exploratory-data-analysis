@@ -144,7 +144,15 @@ The dataset follows a <strong>star schema</strong> design with one central fact 
 
 <h4>Q: Do outliers represent bulk deals, pricing errors, or special contracts? Is missing data affecting visibility?</h4>
 <p>
-<strong>A:</strong> Further anomaly analysis identified a small number of extreme pricing events that occurred only once per product. These transactions were deemed likely data quality issues rather than legitimate pricing behaviour and were excluded from pricing analysis. In contrast, repeated high-value transactions for other products were retained as indicative of genuine contract or bundled pricing behaviour.
+<strong>A:</strong> Further anomaly analysis identified a small number of extreme pricing events that occurred only once per product. These transactions were deemed likely data quality issues rather than legitimate pricing behaviour and were excluded from pricing analysis.
+</p>
+
+<p>
+Quantifying the impact of these exclusions showed that removing just three anomalous transactions reduced the <strong>maximum unit price from £120,000 to £18,901</strong>, while the <strong>average unit price changed only marginally (£1,442 → £1,402)</strong>. At the product level, each affected product contained a single extreme transaction, inflating both average and maximum prices, while normal pricing behaviour remained stable once removed. This confirms the outliers materially distorted pricing conclusions without representing genuine commercial patterns.
+</p>
+
+<p>
+In contrast, repeated high-value transactions for other products were retained as they likely reflect legitimate bundled or contract-level pricing.
 </p>
 
 <p>
