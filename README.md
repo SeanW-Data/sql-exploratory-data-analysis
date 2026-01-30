@@ -207,3 +207,5 @@ Records with missing customer <strong>city</strong> or <strong>segment</strong> 
 </ul>
 
 <p><em>This project demonstrates how SQL-based exploratory analysis can support multiple business functions, from strategic decision-making and pricing optimisation to operational planning and data quality improvement.</em></p>
+
+<p><em>Project created by Sean Worrall as part of a SQL analytics portfolio.</em></p>
