@@ -75,6 +75,8 @@ The dataset follows a <strong>star schema</strong> design with one central fact 
   <li>Marketing</li>
 </ul>
 
+<p>These insights support revenue forecasting, strategic investment decisions, and prioritisation of high-performing products and customer segments.</p>
+
 <hr>
 
 <h3>2️⃣ Analyse Customer Behaviour & Segments</h3>
@@ -108,6 +110,8 @@ The dataset follows a <strong>star schema</strong> design with one central fact 
   <li>Product Management</li>
 </ul>
 
+<p>This analysis helps guide marketing, sales priorities, and product positioning by examining how different customer segments purchase and generate value.</p>
+
 <hr>
 
 <h3>3️⃣ Seasonal or Sales Cycle Trends</h3>
@@ -119,7 +123,7 @@ The dataset follows a <strong>star schema</strong> design with one central fact 
 
 <h4>Q: Are some products more seasonal?</h4>
 <p>
-<strong>A:</strong> Several products show clear seasonal demand, with peak quarterly sales often <strong>1.5–2.2×</strong> higher than their average quarter. The strongest seasonality is observed in <strong>Product 3 (Q3 2025)</strong>, where sales were <strong>2.21×</strong> the typical quarterly level, followed by <strong>Product 39 (Q4 2025)</strong> and <strong>Product 9 (Q3 2024)</strong>, both approaching <strong>2×</strong> average demand. Seasonal spikes are most commonly concentrated in <strong>Q2–Q4</strong>.
+<strong>A:</strong> Several products show clear seasonal demand, with peak quarterly sales often <strong>1.5–2.2×</strong> higher than their average quarterly sales. The strongest seasonality is observed in <strong>Product 3 (Q3 2025)</strong>, where sales were <strong>2.21×</strong> the typical quarterly level, followed by <strong>Product 39 (Q4 2025)</strong> and <strong>Product 9 (Q3 2024)</strong>, both approaching <strong>2×</strong> average demand. Seasonal spikes are most commonly concentrated in <strong>Q2–Q4</strong>.
 </p>
 
 <h4>Q: Do customers churn or re-appear based on time?</h4>
@@ -137,6 +141,8 @@ The dataset follows a <strong>star schema</strong> design with one central fact 
   <li>Marketing</li>
   <li>Customer Success</li>
 </ul>
+
+<p>Understanding seasonal demand patterns enables better inventory planning, cash-flow forecasting, campaign timing, and proactive customer engagement.</p>
 
 <hr>
 
@@ -176,6 +182,8 @@ Records with missing customer <strong>city</strong> or <strong>segment</strong> 
   <li>Finance</li>
   <li>Sales Operations</li>
 </ul>
+
+<p>These findings improve data reliability, protect reporting accuracy, and support better governance around pricing, contracts, and operational reporting.</p>
 
 <hr>
 
