@@ -1,51 +1,59 @@
-/* Do customers churn (1-month period), or re-appear over time?
-- Active customers: bought this month
-- Retained customers: bought this month and last month
-- Churned customers: bought last month but not this month
-- New customers: first-ever purchase is this month
-- Reactivated customers: bought this month, didn’t buy last month, but had bought before (i.e., came back) */
+/* =========================================================
+   05 — Churn & Reactivation Analysis
+   Purpose: analyse customer retention, churn, and reactivation
+            trends over time using monthly cohorts
+   ========================================================= */
 
-WITH customer_months AS (SELECT DISTINCT fs.customer_id,
-                                         DATE_TRUNC('month', dd.date)::date AS month
-                         FROM fact_sales fs
-                                  INNER JOIN dim_date dd
-                                             ON fs.date_id = dd.date_id),
-     first_month AS (SELECT customer_id, MIN(month) AS first_month
-                     FROM customer_months
-                     GROUP BY customer_id),
-     labeled AS (SELECT cm.customer_id,
-                        cm.month,
-                        (cm.month - INTERVAL '1 month')::date AS prev_month,
-                        EXISTS (SELECT 1
-                                FROM customer_months cm2
-                                WHERE cm2.customer_id = cm.customer_id
-                                  AND cm2.month = (cm.month - INTERVAL '1 month')::date) AS was_active_prev_month,
-                        fm.first_month
-                 FROM customer_months cm
-                          INNER JOIN first_month fm USING (customer_id)),
-     monthly AS (SELECT month,
-                        COUNT(*) FILTER (WHERE was_active_prev_month) AS retained_customers,
-                        COUNT(*) FILTER (WHERE NOT was_active_prev_month
-                            AND month = first_month) AS new_customers,
-                        COUNT(*) FILTER (WHERE NOT was_active_prev_month
-                            AND month > first_month) AS reactivated_customers,
-                        COUNT(*) AS active_customers
-                 FROM labeled
-                 GROUP BY month),
-     churned AS (SELECT (cm.month + INTERVAL '1 month')::date AS month,
-                        COUNT(*) AS churned_customers
-                 FROM customer_months cm
-                          LEFT JOIN customer_months cm2
-                                    ON cm2.customer_id = cm.customer_id
-                                        AND cm2.month = (cm.month + INTERVAL '1 month')::date
-                 WHERE cm2.customer_id IS NULL
-                 GROUP BY 1)
-SELECT mo.month,
-       mo.active_customers,
-       mo.retained_customers,
-       COALESCE(ch.churned_customers, 0) AS churned_customers,
-       mo.new_customers,
-       mo.reactivated_customers
-FROM monthly mo
-         LEFT JOIN churned ch USING (month)
-ORDER BY mo.month;
+-- =========================================================
+-- 1) Identify customer activity by month
+-- =========================================================
+
+WITH customer_month_activity AS (SELECT DISTINCT fs.customer_id,
+                                                 DATE_TRUNC('month', dd.date)::date AS activity_month
+                                 FROM fact_sales fs
+                                          INNER JOIN dim_date dd
+                                                     ON fs.date_id = dd.date_id),
+
+-- =========================================================
+-- 2) Add previous activity for churn logic
+-- =========================================================
+
+     customer_activity_with_lag AS (SELECT customer_id,
+                                           activity_month,
+                                           LAG(activity_month) OVER (
+                                               PARTITION BY customer_id
+                                               ORDER BY activity_month
+                                               ) AS previous_activity_month
+                                    FROM customer_month_activity),
+
+-- =========================================================
+-- 3) Classify customer status per month
+-- =========================================================
+
+     customer_status AS (SELECT activity_month,
+                                customer_id,
+                                CASE
+                                    WHEN previous_activity_month IS NULL
+                                        THEN 'new'
+                                    WHEN previous_activity_month = activity_month - INTERVAL '1 month'
+                                        THEN 'retained'
+                                    ELSE 'reactivated'
+                                    END AS customer_status
+                         FROM customer_activity_with_lag)
+
+-- =========================================================
+-- 4) Monthly churn & retention summary
+-- =========================================================
+
+SELECT activity_month,
+       COUNT(DISTINCT customer_id) AS active_customers,
+       COUNT(DISTINCT customer_id) FILTER (WHERE customer_status = 'new') AS new_customers,
+       COUNT(DISTINCT customer_id) FILTER (WHERE customer_status = 'retained') AS retained_customers,
+       COUNT(DISTINCT customer_id) FILTER (WHERE customer_status = 'reactivated') AS reactivated_customers,
+       (
+           COUNT(DISTINCT customer_id)
+               - COUNT(DISTINCT customer_id) FILTER (WHERE customer_status = 'retained')
+           ) AS churned_customers
+FROM customer_status
+GROUP BY activity_month
+ORDER BY activity_month;
