@@ -4,11 +4,15 @@
 
 <img src="diagrams/data_analysis_workflow.png" width="450">
 
+---
+
 <h3>📌 Project Overview</h3>
 
 This project presents an end-to-end SQL exploratory data analysis (EDA) of a fictional tech-based business across a two-year period (2024–2025). The dataset is modelled using a <strong>star schema</strong> (fact + dimension tables) to reflect real-world analytics workflows.
 
 The analysis focuses on revenue performance, customer behaviour, seasonality, churn/reactivation, pricing behaviour, and operational anomalies. The dataset is clean enough for immediate exploration but intentionally includes a small number of missing values and pricing outliers to support anomaly investigation and validation of assumptions.
+
+---
 
 <h3>🎯 Project Objectives</h3>
 
@@ -20,6 +24,8 @@ The analysis focuses on revenue performance, customer behaviour, seasonality, ch
   <li>Detect operational anomalies (outliers + missing data), validate assumptions, and assess impact on conclusions</li>
   <li>Demonstrate SQL capability in PostgreSQL (CTEs, window functions, time analysis) and business-focused interpretation</li>
 </ul>
+
+---
 
 <h3>❓ Business Questions Answered</h3>
 
@@ -36,6 +42,8 @@ The analysis focuses on revenue performance, customer behaviour, seasonality, ch
   <li>Do outliers represent bulk deals, pricing errors, or special contracts? Is missing data affecting visibility?</li>
 </ul>
 
+---
+
 <h3>🗂️ Data Model (Star Schema)</h3>
 
 <img src="diagrams/sales_data_erd.png" width="450">
@@ -43,6 +51,8 @@ The analysis focuses on revenue performance, customer behaviour, seasonality, ch
 <p>
 The dataset follows a <strong>star schema</strong> design with one central fact table (<code>fact_sales</code>) and supporting dimensions (<code>dim_customer</code>, <code>dim_product</code>, <code>dim_date</code>). This structure enables efficient aggregation, segmentation, and time-series analysis.
 </p>
+
+---
 
 <hr>
 
@@ -187,6 +197,8 @@ Records with missing customer <strong>city</strong> or <strong>segment</strong> 
 
 <hr>
 
+---
+
 <h3>⚠️ Assumptions & Limitations</h3>
 
 <ul>
@@ -194,6 +206,8 @@ Records with missing customer <strong>city</strong> or <strong>segment</strong> 
   <li>Segment and city analyses exclude records with missing customer attributes to avoid misclassification.</li>
   <li>Some transactions may represent bundled or contract-level pricing, meaning quantity does not always reflect discrete units sold.</li>
 </ul>
+
+---
 
 <h3>🛠 Tools & Skills Demonstrated</h3>
 
@@ -207,5 +221,7 @@ Records with missing customer <strong>city</strong> or <strong>segment</strong> 
 </ul>
 
 <p><em>This project demonstrates how SQL-based exploratory analysis can support multiple business functions, from strategic decision-making and pricing optimisation to operational planning and data quality improvement.</em></p>
+
+---
 
 <p><em>Project created by Sean Worrall as part of a SQL analytics portfolio.</em></p>
