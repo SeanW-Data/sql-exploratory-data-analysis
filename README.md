@@ -52,8 +52,6 @@ The analysis focuses on revenue performance, customer behaviour, seasonality, ch
 The dataset follows a <strong>star schema</strong> design with one central fact table (<code>fact_sales</code>) and supporting dimensions (<code>dim_customer</code>, <code>dim_product</code>, <code>dim_date</code>). This structure enables efficient aggregation, segmentation, and time-series analysis.
 </p>
 
----
-
 <hr>
 
 <h3>🔍 Key Insights Discovered (Q&A)</h3>
@@ -196,8 +194,6 @@ Records with missing customer <strong>city</strong> or <strong>segment</strong> 
 <p>These findings improve data reliability, protect reporting accuracy, and support better governance around pricing, contracts, and operational reporting.</p>
 
 <hr>
-
----
 
 <h3>⚠️ Assumptions & Limitations</h3>
 
