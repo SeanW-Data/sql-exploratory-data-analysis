@@ -93,3 +93,7 @@ FROM fact_sales fs
 WHERE fs.sales_amount IS NOT NULL
 GROUP BY dd.year, dd.quarter
 ORDER BY dd.year, dd.quarter;
+
+
+
+-- SQL queries written by Sean Worrall for EDA project
