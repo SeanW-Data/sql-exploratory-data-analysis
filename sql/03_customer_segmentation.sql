@@ -74,3 +74,8 @@ FROM (SELECT dc.segment,
       GROUP BY dc.segment, dp.category) ranked_categories
 WHERE category_rank = 1
 ORDER BY segment;
+
+
+
+
+-- SQL queries written by Sean Worrall for EDA project
