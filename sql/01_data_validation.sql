@@ -123,3 +123,8 @@ SELECT COUNT(*) AS orphan_date_rows
 FROM fact_sales fs
          LEFT JOIN dim_date dd ON fs.date_id = dd.date_id
 WHERE dd.date_id IS NULL;
+
+
+
+
+-- SQL queries written by Sean Worrall for EDA project
