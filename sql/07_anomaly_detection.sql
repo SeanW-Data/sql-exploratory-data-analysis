@@ -158,3 +158,8 @@ SELECT product_id,
 FROM before_after_by_product
 ORDER BY product_name,
          scenario;
+
+
+
+
+-- SQL queries written by Sean Worrall for EDA project
