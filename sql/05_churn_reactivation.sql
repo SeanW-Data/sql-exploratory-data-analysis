@@ -57,3 +57,8 @@ SELECT activity_month,
 FROM customer_status
 GROUP BY activity_month
 ORDER BY activity_month;
+
+
+
+
+-- SQL queries written by Sean Worrall for EDA project
