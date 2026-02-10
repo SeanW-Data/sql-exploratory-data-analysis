@@ -78,3 +78,8 @@ SELECT product_name,
        ROUND(total_orders / NULLIF(avg_quarterly_orders, 0), 2) AS seasonality_index
 FROM product_seasonality
 ORDER BY seasonality_index DESC;
+
+
+
+
+-- SQL queries written by Sean Worrall for EDA project
