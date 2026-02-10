@@ -130,3 +130,9 @@ FROM priced_products_clean
 WHERE product_rank <= 3
 ORDER BY segment,
          product_rank;
+
+
+
+
+
+-- SQL queries written by Sean Worrall for EDA project
